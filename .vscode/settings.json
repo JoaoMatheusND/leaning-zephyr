@@ -1,3 +1,5 @@
 {
-    "nrf-connect.topdir": "${nrf-connect.sdk:2.6.1}"
+    "nrf-connect.topdir": "${nrf-connect.sdk:2.6.1}",
+    "idf.flashType": "UART",
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}/build\\compile_commands.json"
 }
