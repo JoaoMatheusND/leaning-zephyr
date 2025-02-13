@@ -1,5 +1,9 @@
 {
-    "nrf-connect.topdir": "${nrf-connect.sdk:2.6.1}",
-    "idf.flashType": "UART",
-    "sonarlint.pathToCompileCommands": "${workspaceFolder}/build\\compile_commands.json"
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.default.compileCommands": "build/compile_commands.json",
+    "files.associations": {
+        "kernel.h": "c",
+        "uart.h": "c",
+        "device.h": "c"
+    }
 }
