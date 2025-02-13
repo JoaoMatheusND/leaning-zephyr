@@ -1,0 +1,9 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.default.compileCommands": "build/compile_commands.json",
+    "files.associations": {
+        "kernel.h": "c",
+        "uart.h": "c",
+        "device.h": "c"
+    }
+}
