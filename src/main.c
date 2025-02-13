@@ -60,7 +60,7 @@ void tx_task(void){
         }
     }
 }
-
+ 
 K_THREAD_DEFINE(rx_task_id, 1024, rx_task, NULL, NULL, NULL, 7, 0, 0);
 K_THREAD_DEFINE(tx_task_id, 1024, tx_task, NULL, NULL, NULL, 7, 0, 0);
 
