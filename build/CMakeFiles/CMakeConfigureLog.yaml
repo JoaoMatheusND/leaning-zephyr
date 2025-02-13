@@ -4,11 +4,11 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:5 (find_package)"
     message: |
       The target system is: Generic - 4.0.99 - arm
@@ -16,23 +16,23 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:5 (find_package)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-      Compiler: /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Compiler: /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
       Build flags: 
       Id flags:  
       
       The output was:
       1
-      /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
       exit.c:(.text.exit+0x34): undefined reference to `_exit'
       collect2: error: ld returned 1 exit status
       
@@ -40,17 +40,17 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:5 (find_package)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Compiler: /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
       Build flags: 
       Id flags: -c 
       
@@ -61,28 +61,28 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
       
       The C compiler identification is GNU, found in:
-        /home/edge/zephyrproject/app/build/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o
+        /home/jotaf/zephyrproject/app/leaning-zephyr/build/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o
       
   -
     kind: "message-v1"
     backtrace:
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:5 (find_package)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-      Compiler: /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
+      Compiler: /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
       Build flags: 
       Id flags:  
       
       The output was:
       1
-      /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
       exit.c:(.text.exit+0x34): undefined reference to `_exit'
       collect2: error: ld returned 1 exit status
       
@@ -90,17 +90,17 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/kernel.cmake:128 (project)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:5 (find_package)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /home/edge/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
+      Compiler: /home/jotaf/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-g++ 
       Build flags: 
       Id flags: -c 
       
@@ -111,17 +111,17 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
       
       The CXX compiler identification is GNU, found in:
-        /home/edge/zephyrproject/app/build/CMakeFiles/3.31.5/CompilerIdCXX/CMakeCXXCompilerId.o
+        /home/jotaf/zephyrproject/app/leaning-zephyr/build/CMakeFiles/3.31.5/CompilerIdCXX/CMakeCXXCompilerId.o
       
   -
     kind: "message-v1"
     backtrace:
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
-      - "/usr/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/kernel.cmake:134 (enable_language)"
-      - "/home/edge/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
-      - "/home/edge/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:1237 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineASMCompiler.cmake:135 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/kernel.cmake:134 (enable_language)"
+      - "/home/jotaf/zephyrproject/zephyr/cmake/modules/zephyr_default.cmake:142 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:66 (include)"
+      - "/home/jotaf/zephyrproject/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)"
       - "CMakeLists.txt:5 (find_package)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
