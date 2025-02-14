@@ -6,7 +6,6 @@
 #define UART_DEVICE_NODE DT_CHOSEN(zephyr_shell_uart)
 
 K_MSGQ_DEFINE(pc_msg, MSG_LEN, 10, 1);
-K_MSGQ_DEFINE(aceleormetro_msg, MSG_LEN, 10, 1);
 
 static const struct device const *uart_dev = DEVICE_DT_GET(UART_DEVICE_NODE);
 
