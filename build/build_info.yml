@@ -44,56 +44,9 @@ cmake:
     user-files:
      - /home/edge/zephyrproject/app/prj.conf
   llext-edk:
-    cflags:
-     - -D$<JOIN:KERNEL
-     - __ZEPHYR__=1
-     - __LINUX_ERRNO_EXTENSIONS__
-     - PICOLIBC_LONG_LONG_PRINTF_SCANF
-     - __PROGRAM_START
-     - SL_RAIL_UTIL_PA_CONFIG_HEADER=
+#   cflags: @YAML-LIST@;-D$<JOIN:KERNEL$<SEMICOLON>__ZEPHYR__=1$<SEMICOLON>$<TARGET_PROPERTY:compiler,security_fortify_compile_time>$<SEMICOLON>__LINUX_ERRNO_EXTENSIONS__$<SEMICOLON>PICOLIBC_LONG_LONG_PRINTF_SCANF$<SEMICOLON>__PROGRAM_START$<SEMICOLON>SL_RAIL_UTIL_PA_CONFIG_HEADER=
     file: /home/edge/zephyrproject/app/build/zephyr/llext-edk.tar.xz
-    include-dirs:
-     - /home/edge/zephyrproject/app/build/zephyr/include/generated/zephyr
-     - /home/edge/zephyrproject/zephyr/include
-     - /home/edge/zephyrproject/app/build/zephyr/include/generated
-     - /home/edge/zephyrproject/zephyr/soc/silabs
-     - /home/edge/zephyrproject/zephyr/lib/libc/common/include
-     - /home/edge/zephyrproject/zephyr/soc/silabs/common/.
-     - /home/edge/zephyrproject/zephyr/soc/silabs/silabs_s2
-     - /home/edge/zephyrproject/zephyr/soc/silabs/silabs_s2/efr32bg22
-     - /home/edge/zephyrproject/modules/hal/cmsis/CMSIS/Core/Include
-     - /home/edge/zephyrproject/zephyr/modules/cmsis/.
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/radio/rail_lib/chip/efr32/efr32xg2x
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/radio/rail_lib/common
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/radio/rail_lib/plugin/pa-conversions
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/protocol/bluetooth/bgstack/ll/inc
-     - /home/edge/zephyrproject/zephyr/modules/hal_silabs/simplicity_sdk/config
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/Device/SiliconLabs/EFR32BG22/Include
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/common/config
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/common/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/driver/gpio/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/emlib/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/peripheral/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/clock_manager/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/device_init/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/device_manager/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/hfxo_manager/config
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/hfxo_manager/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/hfxo_manager/src
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/interrupt_manager/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/memory_manager/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/memory_manager/profiler/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/power_manager/config
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/power_manager/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/sleeptimer/config
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/sleeptimer/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/service/sleeptimer/src
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/security/sl_component/sl_protocol_crypto/src
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/security/sl_component/sli_crypto/inc
-     - /home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/security/sl_component/se_manager/src
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/security/sl_component/se_manager/inc
-     - /home/edge/zephyrproject/modules/hal/silabs/simplicity_sdk/platform/security/sl_component/sli_psec_osal/inc
+#   include-dirs: @YAML-LIST@;$<TARGET_PROPERTY:zephyr_interface,INTERFACE_INCLUDE_DIRECTORIES>
   toolchain:
     name: zephyr
     path: /home/edge/zephyr-sdk-0.17.0

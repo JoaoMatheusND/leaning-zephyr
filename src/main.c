@@ -4,13 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 
-/* Defina os nomes dos dispositivos UART conforme definido no DTS */
-#define UART0_DEVICE_NAME "UART_0"  // Nome do dispositivo UART0 no DTS
-#define UART2_DEVICE_NAME "UART_2"  // Nome do dispositivo UART2 no DTS
+/* Nome do dispositivo UART */
+#define UART_DEVICE_NODE DT_CHOSEN(zephyr_shell_uart)
 
-/* Ponteiros para os dispositivos UART */
-const struct device *uart0;
-const struct device *uart2;
+static const struct device *const uart_dev = DEVICE_DT_GET(UART_DEVICE_NODE);
 
 /* Configuração UART */
 struct uart_config uart_cfg = {
@@ -54,61 +51,48 @@ int main(void)
     char recv_buf[64];
     int i = 10;
 
-    /* Obtém os dispositivos UART pelo nome */
-    uart0 = device_get_binding(UART0_DEVICE_NAME);
-    uart2 = device_get_binding(UART2_DEVICE_NAME);
+    /* Obtém o dispositivo UART pelo nome */
+    //art_dev = device_get_binding(UART_DEVICE_NAME);
 
-    /* Verifica se os dispositivos UART estão prontos */
-    if (!uart0) {
-        printk("UART0 device not found\n");
-        return -1;
-    }
-    if (!uart2) {
-        printk("UART2 device not found\n");
+    /* Verifica se o dispositivo UART está pronto */
+    if (!uart_dev) {
+        printk("UART device not found\n");
         return -1;
     }
 
-    /* Configura os dispositivos UART */
-    rc = uart_configure(uart0, &uart_cfg);
+    /* Configura o dispositivo UART */
+    rc = uart_configure(uart_dev, &uart_cfg);
     if (rc) {
-        printk("Could not configure device %s\n", uart0->name);
-    }
-    rc = uart_configure(uart2, &uart_cfg);
-    if (rc) {
-        printk("Could not configure device %s\n", uart2->name);
+        printk("Could not configure device %s\n", uart_dev->name);
     }
 
     /* Loop principal */
     while (i--) {
-        snprintf(send_buf, 64, "Hello from device %s, num %d", uart0->name, i);
-        send_str(uart0, send_buf);
-        /* Espera um tempo para a mensagem chegar ao segundo UART */
+        snprintf(send_buf, 64, "Hello from device %s, num %d", uart_dev->name, i);
+        send_str(uart_dev, send_buf);
+        /* Espera um tempo para a mensagem chegar ao outro dispositivo */
         k_sleep(K_MSEC(100));
-        recv_str(uart2, recv_buf);
+        recv_str(uart_dev, recv_buf);
 
         k_sleep(K_MSEC(1000));
     }
 
     /* Altera a taxa de transmissão (baudrate) */
     uart_cfg.baudrate = 9600;
-    printk("\nChanging baudrate of both uart devices to %d!\n\n", uart_cfg.baudrate);
+    printk("\nChanging baudrate of the UART device to %d!\n\n", uart_cfg.baudrate);
 
-    rc = uart_configure(uart0, &uart_cfg);
+    rc = uart_configure(uart_dev, &uart_cfg);
     if (rc) {
-        printk("Could not configure device %s\n", uart0->name);
-    }
-    rc = uart_configure(uart2, &uart_cfg);
-    if (rc) {
-        printk("Could not configure device %s\n", uart2->name);
+        printk("Could not configure device %s\n", uart_dev->name);
     }
 
     i = 10;
     while (i--) {
-        snprintf(send_buf, 64, "Hello from device %s, num %d", uart0->name, i);
-        send_str(uart0, send_buf);
-        /* Espera um tempo para a mensagem chegar ao segundo UART */
+        snprintf(send_buf, 64, "Hello from device %s, num %d", uart_dev->name, i);
+        send_str(uart_dev, send_buf);
+        /* Espera um tempo para a mensagem chegar ao outro dispositivo */
         k_sleep(K_MSEC(100));
-        recv_str(uart2, recv_buf);
+        recv_str(uart_dev, recv_buf);
 
         k_sleep(K_MSEC(1000));
     }
