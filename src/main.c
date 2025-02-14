@@ -2,49 +2,63 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/uart.h>
 
-
+#define MSG_LEN 32
 #define UART_DEVICE_NODE DT_CHOSEN(zephyr_shell_uart)
 
-const struct device *uart_dev;
+K_MSGQ_DEFINE(pc_msg, MSG_LEN, 10, 1);
+K_MSGQ_DEFINE(aceleormetro_msg, MSG_LEN, 10, 1);
 
-#define BUF_SIZE 128
-uint8_t rx_buf[BUF_SIZE]; // Buffer para armazenar os dados recebidos
-uint8_t tx_msg[] = "Message from A!\n"; // Mensagem de envio do A
+static const struct device const *uart_dev = DEVICE_DT_GET(UART_DEVICE_NODE);
 
-void uart_cb(const struct device *dev, void *user_data)
-{
-    uint8_t c;
-    while (uart_poll_in(dev, &c) == 0) {
-        printk("A received: %c", c); // Imprime os caracteres recebidos
-    }
-}
+static char rx_buff[MSG_LEN];
+static char tx_buff[MSG_LEN];
 
-void send_message(void)
-{
-    for (int i = 0; i < strlen(tx_msg); i++) {
-        uart_poll_out(uart_dev, tx_msg[i]);
-    }
-    printk("A sent: %s\n", tx_msg);
-}
+static int rx_buffer_pos;
+static int tx_buffer_pos;
 
-void main(void)
-{
-    uart_dev = DEVICE_DT_GET(UART_DEVICE_NODE);
+void serial_cb(const struct device *dev, void *user_data){
+    uint8_t data;
 
-    if (!device_is_ready(uart_dev)) {
-        printk("UART device not found!\n");
+    if(!uart_irq_update(uart_dev) || !uart_irq_rx_ready(uart_dev)){
         return;
     }
 
-    uart_irq_callback_user_data_set(uart_dev, uart_cb, NULL);
+    while(uart_fifo_read(uart_dev, &data, 1)){
+        if((data == '\n' || data == '\r') && rx_buffer_pos > 0){
+            rx_buff[rx_buffer_pos] = '\0';
+
+            k_msgq_put(&pc_msg, rx_buff, K_NO_WAIT);
+
+            rx_buffer_pos = 0;
+        }else{
+            rx_buff[rx_buffer_pos++] = data;
+        }
+    }
+}
+
+int main(){
+    char tx_buff[MSG_LEN];
+
+    if(!device_is_ready(uart_dev)){
+        printk("UART device not ready\n");
+        return -1;
+    }
+
+    int ret = uart_irq_callback_user_data_set(uart_dev, serial_cb, NULL);
+
+    if(ret < 0){
+        if (ret == -ENOTSUP) {
+			printk("Interrupt-driven UART API support not enabled\n");
+		} else if (ret == -ENOSYS) {
+			printk("UART device does not support interrupt-driven API\n");
+		} else {
+			printk("Error setting UART callback: %d\n", ret);
+		}
+		return 0;
+    }
+
     uart_irq_rx_enable(uart_dev);
 
-    while (1) {
-        send_message();  // Envia a mensagem
-        k_sleep(K_SECONDS(2));  // Espera por 2 segundos antes de enviar novamente
 
-        // Agora aguarda uma resposta
-        printk("A waiting for response...\n");
-        k_sleep(K_SECONDS(2));  // Tempo de espera para resposta de B
-    }
+    return 0;
 }
