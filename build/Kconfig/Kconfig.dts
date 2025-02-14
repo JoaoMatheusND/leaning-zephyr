@@ -6147,11 +6147,6 @@ DT_COMPAT_NXP_NBU := nxp,nbu
 config DT_HAS_NXP_NBU_ENABLED
 	def_bool $(dt_compat_enabled,$(DT_COMPAT_NXP_NBU))
 
-DT_COMPAT_NXP_NETC_SWITCH := nxp,netc-switch
-
-config DT_HAS_NXP_NETC_SWITCH_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_NXP_NETC_SWITCH))
-
 DT_COMPAT_NXP_NX20P3483 := nxp,nx20p3483
 
 config DT_HAS_NXP_NX20P3483_ENABLED
@@ -8101,56 +8096,6 @@ DT_COMPAT_SILABS_SI7210 := silabs,si7210
 
 config DT_HAS_SILABS_SI7210_ENABLED
 	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SI7210))
-
-DT_COMPAT_SILABS_SIWX91X_BT_HCI := silabs,siwx91x-bt-hci
-
-config DT_HAS_SILABS_SIWX91X_BT_HCI_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_BT_HCI))
-
-DT_COMPAT_SILABS_SIWX91X_CLOCK := silabs,siwx91x-clock
-
-config DT_HAS_SILABS_SIWX91X_CLOCK_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_CLOCK))
-
-DT_COMPAT_SILABS_SIWX91X_DMA := silabs,siwx91x-dma
-
-config DT_HAS_SILABS_SIWX91X_DMA_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_DMA))
-
-DT_COMPAT_SILABS_SIWX91X_FLASH_CONTROLLER := silabs,siwx91x-flash-controller
-
-config DT_HAS_SILABS_SIWX91X_FLASH_CONTROLLER_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_FLASH_CONTROLLER))
-
-DT_COMPAT_SILABS_SIWX91X_GPIO := silabs,siwx91x-gpio
-
-config DT_HAS_SILABS_SIWX91X_GPIO_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_GPIO))
-
-DT_COMPAT_SILABS_SIWX91X_GPIO_PORT := silabs,siwx91x-gpio-port
-
-config DT_HAS_SILABS_SIWX91X_GPIO_PORT_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_GPIO_PORT))
-
-DT_COMPAT_SILABS_SIWX91X_GPIO_UULP := silabs,siwx91x-gpio-uulp
-
-config DT_HAS_SILABS_SIWX91X_GPIO_UULP_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_GPIO_UULP))
-
-DT_COMPAT_SILABS_SIWX91X_PINCTRL := silabs,siwx91x-pinctrl
-
-config DT_HAS_SILABS_SIWX91X_PINCTRL_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_PINCTRL))
-
-DT_COMPAT_SILABS_SIWX91X_RNG := silabs,siwx91x-rng
-
-config DT_HAS_SILABS_SIWX91X_RNG_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_RNG))
-
-DT_COMPAT_SILABS_SIWX91X_WIFI := silabs,siwx91x-wifi
-
-config DT_HAS_SILABS_SIWX91X_WIFI_ENABLED
-	def_bool $(dt_compat_enabled,$(DT_COMPAT_SILABS_SIWX91X_WIFI))
 
 DT_COMPAT_SILABS_USART_SPI := silabs,usart-spi
 

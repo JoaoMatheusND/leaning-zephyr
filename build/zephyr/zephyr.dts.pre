@@ -1,7 +1,7 @@
-# 0 "/home/jotaf/zephyrproject/zephyr/misc/empty_file.c"
+# 0 "/home/edge/zephyrproject/zephyr/misc/empty_file.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 1
+# 1 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 1
 
 
 
@@ -9,32 +9,32 @@
 
 
 /dts-v1/;
-# 1 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 1 3 4
+# 1 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 1 3 4
+# 1 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "/home/jotaf/zephyrproject/zephyr/dts/arm/armv8-m.dtsi" 1 3 4
+# 1 "/home/edge/zephyrproject/zephyr/dts/arm/armv8-m.dtsi" 1 3 4
 
 
-# 1 "/home/jotaf/zephyrproject/zephyr/dts/common/skeleton.dtsi" 1 3 4
-# 9 "/home/jotaf/zephyrproject/zephyr/dts/common/skeleton.dtsi" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "/home/edge/zephyrproject/zephyr/dts/common/skeleton.dtsi" 3 4
 / {
  #address-cells = <1>;
  #size-cells = <1>;
  chosen { };
  aliases { };
 };
-# 4 "/home/jotaf/zephyrproject/zephyr/dts/arm/armv8-m.dtsi" 2 3 4
+# 4 "/home/edge/zephyrproject/zephyr/dts/arm/armv8-m.dtsi" 2 3 4
 
 / {
  soc {
@@ -58,46 +58,46 @@
   };
  };
 };
-# 8 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
-# 9 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
-# 10 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/gecko-pinctrl.h" 1 3 4
-# 11 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
-# 9 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/adc/adc.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
-# 19 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
-# 34 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_macro.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
-# 18 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
-# 1083 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_loops.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_listify.h" 1 3 4
-# 1084 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_loops.h" 2 3 4
-# 19 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
-# 162 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal_is_eq.h" 1 3 4
-# 163 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
-# 193 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_inc.h" 1 3 4
-# 194 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 8 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
+# 9 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
+# 10 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/gecko-pinctrl.h" 1 3 4
+# 11 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
+# 9 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/adc/adc.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
+# 19 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
+# 34 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_macro.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
+# 18 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
+# 1083 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_loops.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_listify.h" 1 3 4
+# 1084 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_loops.h" 2 3 4
+# 19 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 162 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal_is_eq.h" 1 3 4
+# 163 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 193 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_inc.h" 1 3 4
+# 194 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
 
 
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_dec.h" 1 3 4
-# 197 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_dec.h" 1 3 4
+# 197 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
 
 
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_x2.h" 1 3 4
-# 200 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
-# 35 "/home/jotaf/zephyrproject/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
-# 20 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
-# 10 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/adc/adc.h" 2 3 4
-# 12 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/dts/common/freq.h" 1 3 4
-# 13 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_x2.h" 1 3 4
+# 200 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 35 "/home/edge/zephyrproject/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
+# 20 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
+# 10 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/adc/adc.h" 2 3 4
+# 12 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/dts/common/freq.h" 1 3 4
+# 13 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 2 3 4
 
 / {
  chosen {
@@ -195,7 +195,7 @@
    device_type = "cpu";
    compatible = "arm,cortex-m33";
    reg = <0>;
-# 125 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 3 4
+# 125 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg2x.dtsi" 3 4
    cpu-power-states = <&pstate_em1 &pstate_em2 &pstate_em3>;
   };
 
@@ -464,19 +464,19 @@
 &nvic {
  arm,num-irq-priority-bits = <4>;
 };
-# 8 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/xg22-clock.h" 1 3 4
-# 14 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/xg22-clock.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/common-clock.h" 1 3 4
-# 15 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/xg22-clock.h" 2 3 4
-# 9 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/xg22-dma.h" 1 3 4
-# 10 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/xg22-dma.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/common-dma.h" 1 3 4
-# 11 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/xg22-dma.h" 2 3 4
-# 10 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/dts/common/mem.h" 1 3 4
-# 11 "/home/jotaf/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
+# 8 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/xg22-clock.h" 1 3 4
+# 14 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/xg22-clock.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/common-clock.h" 1 3 4
+# 15 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/clock/silabs/xg22-clock.h" 2 3 4
+# 9 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/xg22-dma.h" 1 3 4
+# 10 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/xg22-dma.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/common-dma.h" 1 3 4
+# 11 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/dma/silabs/xg22-dma.h" 2 3 4
+# 10 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
+# 1 "/home/edge/zephyrproject/zephyr/dts/common/mem.h" 1 3 4
+# 11 "/home/edge/zephyrproject/zephyr/dts/arm/silabs/efr32bg22.dtsi" 2 3 4
 
 / {
  clocks {
@@ -570,19 +570,19 @@
        "rac_rsm", "rac_seq", "rdmailbox", "rfsense", "prortc",
        "synth";
 };
-# 9 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
-# 1 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a-pinctrl.dtsi" 1
+# 9 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
+# 1 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a-pinctrl.dtsi" 1
 
 
 
 
 
 
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs/xg22-pinctrl.h" 1 3 4
-# 14 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs/xg22-pinctrl.h" 3 4
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs-pinctrl-dbus.h" 1 3 4
-# 15 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs/xg22-pinctrl.h" 2 3 4
-# 8 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a-pinctrl.dtsi" 2
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs/xg22-pinctrl.h" 1 3 4
+# 14 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs/xg22-pinctrl.h" 3 4
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs-pinctrl-dbus.h" 1 3 4
+# 15 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/pinctrl/silabs/xg22-pinctrl.h" 2 3 4
+# 8 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a-pinctrl.dtsi" 2
 
 &pinctrl {
  usart0_default: usart0_default {
@@ -618,16 +618,16 @@
   };
  };
 };
-# 10 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
-# 1 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/thunderboard.dtsi" 1
+# 10 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
+# 1 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/thunderboard.dtsi" 1
 
 
 
 
 
 
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/input/input-event-codes.h" 1 3 4
-# 8 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/thunderboard.dtsi" 2
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/input/input-event-codes.h" 1 3 4
+# 8 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/thunderboard.dtsi" 2
 
 / {
  chosen {
@@ -776,9 +776,9 @@
 &adc0 {
  status = "okay";
 };
-# 11 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
-# 1 "/home/jotaf/zephyrproject/zephyr/include/zephyr/dt-bindings/regulator/silabs_dcdc.h" 1 3 4
-# 12 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
+# 11 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
+# 1 "/home/edge/zephyrproject/zephyr/include/zephyr/dt-bindings/regulator/silabs_dcdc.h" 1 3 4
+# 12 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a.dts" 2
 
 / {
 
@@ -883,7 +883,7 @@
  status = "okay";
 };
 # 0 "<command-line>" 2
-# 1 "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a_2.overlay" 1
+# 1 "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/sltb010a_2.overlay" 1
 
 
 
@@ -913,4 +913,4 @@
  enable-gpios = <&gpioc 7 (0 << 0)>;
 };
 # 0 "<command-line>" 2
-# 1 "/home/jotaf/zephyrproject/zephyr/misc/empty_file.c"
+# 1 "/home/edge/zephyrproject/zephyr/misc/empty_file.c"

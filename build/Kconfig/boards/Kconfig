@@ -1,2 +1,2 @@
 # Load Zephyr board Kconfig descriptions.
-osource "/home/jotaf/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/Kconfig"
+osource "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/Kconfig"

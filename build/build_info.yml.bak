@@ -1,4 +1,4 @@
 west:
-  command: /home/jotaf/zephyrproject/.venv/bin/west build -p always .
-  topdir: /home/jotaf/zephyrproject
+  command: /home/edge/zephyrproject/.venv/bin/west build
+  topdir: /home/edge/zephyrproject
   version: 1.3.0
