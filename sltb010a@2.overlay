@@ -1,0 +1,15 @@
+&usart0 {
+    status = "okay";
+    pinctrl-0 = <&usart0_tx_pin &usart0_rx_pin>;
+    pinctrl-names = "default";
+};
+
+&pinctrl {
+    usart0_tx_pin: usart0_tx {
+        pinmux = <PB01_USART0_TX>; 
+    };
+
+    usart0_rx_pin: usart0_rx {
+        pinmux = <PB02_USART0_RX>; 
+    };
+};

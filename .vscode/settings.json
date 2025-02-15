@@ -4,6 +4,9 @@
     "files.associations": {
         "kernel.h": "c",
         "uart.h": "c",
-        "device.h": "c"
-    }
+        "device.h": "c",
+        "tty.h": "c",
+        "console.h": "c"
+    },
+    "github.copilot.chat.terminalChatLocation": "terminal"
 }
