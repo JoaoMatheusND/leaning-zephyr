@@ -1,2 +1,0 @@
-# Load board Kconfig descriptions.
-osource "/home/edge/zephyrproject/zephyr/boards/silabs/dev_kits/sltb010a/Kconfig.sltb010a"
