@@ -63,6 +63,7 @@ void collect_sensor_data(){
 
         // Coloca os dados na fila
         k_msgq_put(&uart_msgq, data, K_FOREVER);
+        break;
     }
 }
 
@@ -79,5 +80,10 @@ void main(void) {
     tx_thread_tid = k_thread_create(&tx_thread_data, thread_stack, STACK_SIZE,
                                     uart_tx_data, uart_dev, NULL, NULL,
                                     1, 0, K_NO_WAIT);
+
+    while(1){
+        collect_sensor_data();
+        K_
+    }
 
 }
