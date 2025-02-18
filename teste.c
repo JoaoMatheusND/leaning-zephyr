@@ -3,8 +3,9 @@
 #include <zephyr/drivers/uart.h>
 #include <zephyr/sys/printk.h>
 
-static const struct device *uart_dev = DEVICE_DT_GET(DT_NODELABEL(usart1));
+#define UART_DEVICE_NODE DT_ALIAS(uart0)
 
+static const struct device *uart_dev = DEVICE_DT_GET(UART_DEVICE_NODE);
 static uint8_t tx_buf[64];
 static int tx_buf_len = 0;
 static int tx_pos = 0;
@@ -13,26 +14,24 @@ static int tx_pos = 0;
 static void uart_cb(const struct device *dev, void *user_data) {
     ARG_UNUSED(user_data);
 
-    if (uart_irq_update(dev) != 1) {
-        return;
-    }
-
-    // Recebendo dados
-    if (uart_irq_rx_ready(dev)) {
-        uint8_t buf[64];
-        int len = uart_fifo_read(dev, buf, sizeof(buf));
-        if (len > 0) {
-            buf[len] = '\0'; // Termina a string
-            printk("Recebido: %s\n", buf);
+    if (uart_irq_update(dev)) {
+        // Recebendo dados
+        if (uart_irq_rx_ready(dev)) {
+            uint8_t buf[64];
+            int len = uart_fifo_read(dev, buf, sizeof(buf));
+            if (len > 0) {
+                buf[len] = '\0'; // Termina a string
+                printk("Recebido: %s\n", buf);
+            }
         }
-    }
 
-    // Enviando dados
-    if (uart_irq_tx_ready(dev) && tx_pos < tx_buf_len) {
-        int len = uart_fifo_fill(dev, &tx_buf[tx_pos], tx_buf_len - tx_pos);
-        tx_pos += len;
-        if (tx_pos >= tx_buf_len) {
-            uart_irq_tx_disable(dev); // Desabilita transmissão ao terminar
+        // Enviando dados
+        if (uart_irq_tx_ready(dev) && tx_pos < tx_buf_len) {
+            int len = uart_fifo_fill(dev, &tx_buf[tx_pos], tx_buf_len - tx_pos);
+            tx_pos += len;
+            if (tx_pos >= tx_buf_len) {
+                uart_irq_tx_disable(dev); // Desabilita transmissão ao terminar
+            }
         }
     }
 }
