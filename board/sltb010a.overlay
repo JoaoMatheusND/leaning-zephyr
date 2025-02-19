@@ -1,0 +1,6 @@
+SPI_ACCE: SPI@0x0 {
+    status: "OKAY";
+    compatible: "spidev";
+    reg: <0x0>;
+    spi-max-frequency: <80000000>>;
+}

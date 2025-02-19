@@ -3,45 +3,65 @@
 #include <zephyr/drivers/uart.h>
 #include <zephyr/sys/printk.h>
 
-#define UART_DEVICE_NODE DT_ALIAS(uart0)
+#define UART_BUF_SIZE 64
 
-static const struct device *uart_dev = DEVICE_DT_GET(UART_DEVICE_NODE);
-static uint8_t tx_buf[64];
-static int tx_buf_len = 0;
-static int tx_pos = 0;
+K_MSGQ_DEFINE(uart_msgq, UART_BUF_SIZE, 10, 4);
 
-// Callback de interrupção da UART
-static void uart_cb(const struct device *dev, void *user_data) {
-    ARG_UNUSED(user_data);
+#define STACK_SIZE 1024
 
-    if (uart_irq_update(dev)) {
-        // Recebendo dados
-        if (uart_irq_rx_ready(dev)) {
-            uint8_t buf[64];
-            int len = uart_fifo_read(dev, buf, sizeof(buf));
-            if (len > 0) {
-                buf[len] = '\0'; // Termina a string
-                printk("Recebido: %s\n", buf);
-            }
+//#define UART_DEVICE_NODE DT_NODELABEL(zephyr_shell_uart)  
+#define UART_DEVICE_NODE DT_CHOSEN(zephyr_shell_uart)
+
+static const struct device *uart_dev = DEVICE_DT_GET(DT_NODELABEL(usart1));
+
+uint8_t rx_buf[UART_BUF_SIZE];
+uint8_t tx_buf[UART_BUF_SIZE];
+
+int rx_buf_pos = 0;
+
+void rx_task(void *p1, void *p2, void *p3){
+    char rx_buffer[UART_BUF_SIZE] = {0};
+    printk("RX Task\n");
+    while(true){
+        if(uart_poll_in(uart_dev, rx_buffer) != 0){
+            k_sleep(K_MSEC(1000));
+            printk("teste\n");
+            continue;
         }
 
-        // Enviando dados
-        if (uart_irq_tx_ready(dev) && tx_pos < tx_buf_len) {
-            int len = uart_fifo_fill(dev, &tx_buf[tx_pos], tx_buf_len - tx_pos);
-            tx_pos += len;
-            if (tx_pos >= tx_buf_len) {
-                uart_irq_tx_disable(dev); // Desabilita transmissão ao terminar
-            }
-        }
+        printk("Recebido: %s\n", rx_buffer);
+        //k_msleep(100);
     }
+
 }
 
-// Função para enviar dados manualmente
-void uart_send(const char *data) {
-    tx_buf_len = strlen(data);
-    memcpy(tx_buf, data, tx_buf_len);
-    tx_pos = 0;
-    uart_irq_tx_enable(uart_dev); // Inicia envio
+void send_by_uart(char *buf)
+{
+	int msg_len = strlen(buf);
+
+	for (int i = 0; i < msg_len; i++) {
+		uart_poll_out(uart_dev, buf[i]);
+	}
+}
+
+void uart_tx_data(void *p1, void *p2, void *p3){
+   while(1){
+        if(k_msgq_get(&uart_msgq, &tx_buf, K_FOREVER) == 0){
+            send_by_uart(tx_buf);
+        }
+   };
+}
+
+void collect_sensor_data(){
+    char data[UART_BUF_SIZE] = "Temperatura Joao: 25.5C\n";
+    while(1){
+        // JOTA - Coleta os dados do sensor
+
+        // Coloca os dados na fila
+        k_msgq_put(&uart_msgq, data, K_FOREVER);
+        k_sleep(K_MSEC(3000));
+        break;
+    }
 }
 
 void main(void) {
@@ -49,12 +69,16 @@ void main(void) {
         printk("UART não está pronta!\n");
         return;
     }
+    printk("UART pronta!\n");
 
-    uart_irq_callback_user_data_set(uart_dev, uart_cb, NULL);
-    uart_irq_rx_enable(uart_dev); // Habilita recepção
 
-    while (1) {
-        k_sleep(K_SECONDS(5));
-        uart_send("Hello via UART Interrupt!\n");
+    while(1){
+        k_sleep(K_MSEC(2000));
+        collect_sensor_data();
     }
-}
+
+};
+
+K_THREAD_DEFINE(tx_task, STACK_SIZE, uart_tx_data, NULL, NULL, NULL, 5, 0, 0);
+K_THREAD_DEFINE(rx_read, STACK_SIZE, rx_task, NULL, NULL, NULL, 5, 0, 0);
+

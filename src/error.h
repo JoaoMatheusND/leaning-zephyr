@@ -1,0 +1,14 @@
+#include "zephyr/types.h"
+
+typedef uint8_t error_t;
+
+#define ERROR_NONE 0x00
+#define ERROR_GENERIC 0x01
+#define ERROR_NOT_READY 0x02
+#define ERROR_INVALID_PARAMETER 0x03
+#define ERROR_NOT_SUPPORTED 0x04
+#define ERROR_NOT_FOUND 0x05
+#define ERROR_ALREADY_INITIALIZED 0x06
+#define ERROR_NOT_INITIALIZED 0x07
+#define ERRPR_UNVAIBLE 0x08
+#define ERROR_INTERNAL 0x09

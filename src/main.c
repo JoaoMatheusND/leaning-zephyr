@@ -1,61 +1,51 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
-#include <zephyr/drivers/uart.h>
-#include <zephyr/sys/printk.h>
+#include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/i2c.h>
 
-static const struct device *uart_dev = DEVICE_DT_GET(DT_NODELABEL(usart1));
+#define SENSOR_POWER_GPIO_NODE DT_NODELABEL(gpioa) // Pino PA04
+#define SENSOR_POWER_PIN 4
 
-static uint8_t tx_buf[64];
-static int tx_buf_len = 0;
-static int tx_pos = 0;
+#define I2C_NODE DT_NODELABEL(i2c0)
 
-// Callback de interrupção da UART
-static void uart_cb(const struct device *dev, void *user_data) {
-    ARG_UNUSED(user_data);
+static const struct device *gpio_dev;
+static const struct device *i2c_dev;
 
-    if (uart_irq_update(dev) != 1) {
+void enable_si7021(void)
+{
+    gpio_dev = DEVICE_DT_GET(SENSOR_POWER_GPIO_NODE);
+    if (!device_is_ready(gpio_dev)) {
+        printk("Erro: GPIO não está pronto!\n");
         return;
     }
 
-    // Recebendo dados
-    if (uart_irq_rx_ready(dev)) {
-        uint8_t buf[64];
-        int len = uart_fifo_read(dev, buf, sizeof(buf));
-        if (len > 0) {
-            buf[len] = '\0'; // Termina a string
-            printk("Recebido: %s\n", buf);
-        }
-    }
-
-    // Enviando dados
-    if (uart_irq_tx_ready(dev) && tx_pos < tx_buf_len) {
-        int len = uart_fifo_fill(dev, &tx_buf[tx_pos], tx_buf_len - tx_pos);
-        tx_pos += len;
-        if (tx_pos >= tx_buf_len) {
-            uart_irq_tx_disable(dev); // Desabilita transmissão ao terminar
-        }
-    }
+    gpio_pin_configure(gpio_dev, SENSOR_POWER_PIN, GPIO_OUTPUT);
+    gpio_pin_set(gpio_dev, SENSOR_POWER_PIN, 1); // Liga o sensor
 }
 
-// Função para enviar dados manualmente
-void uart_send(const char *data) {
-    tx_buf_len = strlen(data);
-    memcpy(tx_buf, data, tx_buf_len);
-    tx_pos = 0;
-    uart_irq_tx_enable(uart_dev); // Inicia envio
-}
+void main(void)
+{
+    printk("Inicializando Si7021...\n");
 
-void main(void) {
-    if (!device_is_ready(uart_dev)) {
-        printk("UART não está pronta!\n");
+    enable_si7021();
+
+    i2c_dev = DEVICE_DT_GET(I2C_NODE);
+    if (!device_is_ready(i2c_dev)) {
+        printk("Erro: I2C não está pronto!\n");
         return;
     }
 
-    uart_irq_callback_user_data_set(uart_dev, uart_cb, NULL);
-    uart_irq_rx_enable(uart_dev); // Habilita recepção
+    uint8_t cmd = 0xE3;  // Comando para medir temperatura (Hold Master Mode)
+    uint8_t data[2];
 
-    while (1) {
-        k_sleep(K_SECONDS(5));
-        uart_send("Hello via UART Interrupt!\n");
+    int ret = i2c_write_read(i2c_dev, 0x40, &cmd, 1, data, 2);
+    if (ret < 0) {
+        printk("Erro ao ler o Si7021!\n");
+        return;
     }
+
+    uint16_t raw_temp = (data[0] << 8) | data[1];
+    float temp_c = ((175.72 * raw_temp) / 65536.0) - 46.85;
+
+    printk("Temperatura: %.2f°C\n", temp_c);
 }
